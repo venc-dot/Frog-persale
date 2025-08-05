@@ -1,84 +1,116 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const copyWallet = () => {
-    navigator.clipboard.writeText("Gux1S1eYzSdsqBVCNUsnNGDRpVmEguy1cwFhZFitrM4S");
-    alert("Alamat wallet disalin!");
+    navigator.clipboard.writeText('Gux1S1eYzSdsqBVCNUsnNGDRpVmEguy1cwFhZFitrM4S');
+    alert('Alamat wallet disalin!');
   };
 
   return (
     <main style={styles.body}>
-      <div style={styles.container}>
-        <h1 style={styles.title}>🚀 PRESALE $FRAD IS LIVE!</h1>
-        <div style={styles.box}>
-          <p><strong>🐸 Nama:</strong> Frog Adventure ($FRAD)</p>
-          <p><strong>💰 Harga:</strong> 0.017 SOL</p>
-          <p><strong>📦 Supply:</strong> 96.700.000</p>
-          <p><strong>📅 Presale:</strong> 2 Agustus – 1 September</p>
-          <p><strong>🔐 Wallet Tujuan:</strong></p>
-          <div style={styles.wallet}>Gux1S1eYzSdsqBVCNUsnNGDRpVmEguy1cwFhZFitrM4S</div>
-          <button style={styles.button} onClick={copyWallet}>📋 Salin Alamat</button><br />
-          <a
-            href="solana:Gux1S1eYzSdsqBVCNUsnNGDRpVmEguy1cwFhZFitrM4S?amount=0.017&label=FRAD%20Presale&message=Buy%201000%20FRAD%20token"
-            target="_blank"
-            style={{ ...styles.button, textDecoration: "none", display: "inline-block" }}
-          >
-            💸 Beli Sekarang
-          </a>
+      <motion.div style={styles.container} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <img src="/maskot.png" alt="Maskot FRAD" style={styles.image} />
+
+        <h1 style={styles.title}>🐸 Frog Adventure ($FRAD)</h1>
+
+        <p style={styles.text}>💰 Presale: 0.017 SOL = 1000 FRAD</p>
+        <p style={styles.text}>📦 Total Supply: 96.700.000</p>
+        <p style={styles.text}>📅 Periode: 2 Agustus – 1 September</p>
+
+        <p style={styles.text}>
+          🚀 Bergabunglah dalam petualangan kocak penuh cuan!  
+          <br />Token meme paling baru di dunia Layer 2 🐸🔥
+        </p>
+
+        <div style={styles.walletBox}>
+          <p>💸 Kirim SOL ke:</p>
+          <p style={styles.wallet}>Gux1S1eYzSdsqBVCNUsnNGDRpVmEguy1cwFhZFitrM4S</p>
+          <button onClick={copyWallet} style={styles.button}>📋 Salin Alamat</button>
         </div>
-        <div style={styles.footer}>Powered by Frog Adventure Chain 🐸</div>
-      </div>
+
+        <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer">
+          <button style={styles.telegram}>📨 Kirim Bukti via Telegram</button>
+        </a>
+
+        <a href="https://phantom.app" target="_blank" rel="noopener noreferrer">
+          <button style={styles.buy}>🛒 Beli via Phantom Wallet</button>
+        </a>
+      </motion.div>
     </main>
   );
 }
 
 const styles = {
   body: {
-    fontFamily: "'Comic Sans MS', cursive, sans-serif",
-    background: "#e0ffe0",
-    minHeight: "100vh",
-    color: "#222",
-    padding: "2em",
-    textAlign: "center",
+    backgroundColor: '#f5ffda',
+    minHeight: '100vh',
+    padding: '20px',
+    fontFamily: 'Comic Sans MS, sans-serif',
   },
   container: {
-    maxWidth: "600px",
-    margin: "0 auto",
+    maxWidth: '600px',
+    margin: 'auto',
+    backgroundColor: '#fff7c4',
+    padding: '30px',
+    borderRadius: '20px',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    textAlign: 'center',
   },
   title: {
-    fontSize: "2.5em",
-    color: "#228B22",
+    fontSize: '2.2rem',
+    color: '#338c1c',
+    marginBottom: '20px',
   },
-  box: {
-    background: "#fff",
-    padding: "1.5em",
-    borderRadius: "15px",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-    marginTop: "1.5em",
+  text: {
+    fontSize: '1.1rem',
+    margin: '10px 0',
+    color: '#444',
+  },
+  walletBox: {
+    marginTop: '20px',
+    background: '#fff9e6',
+    padding: '15px',
+    borderRadius: '10px',
   },
   wallet: {
-    background: "#d0ffd0",
-    padding: "1em",
-    borderRadius: "10px",
-    wordBreak: "break-word",
-    marginTop: "0.5em",
-    fontSize: "0.9em",
+    fontWeight: 'bold',
+    wordBreak: 'break-all',
+    color: '#c93',
+    margin: '10px 0',
   },
   button: {
-    marginTop: "1em",
-    padding: "0.5em 1.5em",
-    backgroundColor: "#32CD32",
-    color: "white",
-    fontSize: "1em",
-    border: "none",
-    borderRadius: "10px",
-    cursor: "pointer",
+    padding: '10px 15px',
+    backgroundColor: '#4CAF50',
+    color: 'white',
+    border: 'none',
+    borderRadius: '10px',
+    cursor: 'pointer',
   },
-  footer: {
-    marginTop: "3em",
-    fontSize: "0.9em",
-    color: "#555",
+  telegram: {
+    marginTop: '20px',
+    padding: '12px 20px',
+    backgroundColor: '#229ED9',
+    color: 'white',
+    fontWeight: 'bold',
+    border: 'none',
+    borderRadius: '10px',
+    cursor: 'pointer',
+  },
+  buy: {
+    marginTop: '15px',
+    padding: '12px 20px',
+    backgroundColor: '#ff6600',
+    color: 'white',
+    fontWeight: 'bold',
+    border: 'none',
+    borderRadius: '10px',
+    cursor: 'pointer',
+  },
+  image: {
+    width: '100px',
+    marginBottom: '20px',
   },
 };
