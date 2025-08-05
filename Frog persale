@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>frog adventure Presale</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #e0fffa, #d2f4ff);
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+    }
+    .title {
+      font-size: 2.5em;
+      color: #2c7c7d;
+    }
+    .mascot {
+      width: 150px;
+      border-radius: 50%;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #00c3a5;
+    }
+    .box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    button {
+      background-color: #00c3a5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00a28b;
+    }
+    .wallet {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🐸 frog adventure Presale</h1>
+    <img src="https://i.imgur.com/X2N9GxA.png" alt="frog adventure Mascot" class="mascot" />
+    
+    <div class="box">
+      <p>💰 <strong>Harga:</strong> 0.02 SOL = 1000 LPEPE</p>
+      <p>📦 <strong>Total Supply:</strong> 69.000.000 LPEPE</p>
+      <p>📅 <strong>Presale:</strong> 1 Agustus – 1 September</p>
+    </div>
+
+    <div class="box">
+      <p>🔐 Kirim SOL ke wallet:</p>
+      <p class="wallet" id="wallet">Gux1S1eYzSdsqBVCNUsnNGDRpVmEguy1cwFhZFitrM4S</p>
+      <button onclick="copyWallet()">📋 Salin Alamat</button>
+    </div>
+  </div>
+
+  <script>
+    function copyWallet() {
+      const wallet = document.getElementById('wallet').innerText;
+      navigator.clipboard.writeText(wallet).then(() => {
+        alert('Alamat wallet disalin!');
+      });
+    }
+  </script>
+</body>
+</html>
